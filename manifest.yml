@@ -1,0 +1,5 @@
+name: Job Efficiency
+description: Standalone Slurm job efficiency dashboard with requested resources and utilization summaries
+icon: fa://gauge-high
+category: Jobs
+new_window: false

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Efficiency Dashboard</title>
+    <% begin; asset_v = File.mtime(File.expand_path('../public/script.js', __dir__)).to_i; css_v = File.mtime(File.expand_path('../public/styles.css', __dir__)).to_i; rescue; asset_v = css_v = Time.now.to_i; end %>
+    <link rel="stylesheet" href="<%= request.script_name %>/styles.css?v=<%= css_v %>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <script>
+        window.APP_BASE_PATH = "<%= request.script_name %>";
+    </script>
+
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-gauge-high"></i> Job Efficiency</h1>
+            <div class="header-controls">
+                <div class="last-update">Last updated: <span id="last-update-time">Never</span></div>
+                <button id="refresh-btn" class="btn btn-primary">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2><i class="fas fa-chart-line"></i> Efficiency Summary</h2>
+            <div class="efficiency-controls">
+                <label for="efficiency-state-filter">Job States:</label>
+                <select id="efficiency-state-filter" class="filter-select">
+                    <option value="completed">Completed</option>
+                    <option value="total" selected>Total (All States)</option>
+                </select>
+            </div>
+            <p class="efficiency-intro" id="efficiency-intro-text">
+                Requested resource summary for completed jobs. Use this to right-size CPU, memory, GPU, and walltime requests.
+            </p>
+            <div class="efficiency-grid" id="efficiency-grid">
+                <div class="efficiency-card" id="efficiency-7-days">
+                    <h3>Last 7 Days</h3>
+                    <div class="efficiency-loading">Loading efficiency metrics...</div>
+                </div>
+                <div class="efficiency-card" id="efficiency-30-days">
+                    <h3>Last 30 Days</h3>
+                    <div class="efficiency-loading">Loading efficiency metrics...</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="<%= request.script_name %>/script.js?v=<%= asset_v %>"></script>
+</body>
+</html>

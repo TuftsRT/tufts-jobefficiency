@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.header h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.last-update {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.section {
+    padding: 30px;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.efficiency-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.efficiency-controls label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.efficiency-intro {
+    color: #666;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+
+.efficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 18px;
+}
+
+.efficiency-card {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    background: #fafbfc;
+    padding: 16px;
+}
+
+.efficiency-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.efficiency-count {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.efficiency-loading {
+    color: #6c757d;
+}
+
+.efficiency-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+}
+
+.efficiency-table th,
+.efficiency-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.9rem;
+}
+
+.efficiency-table th {
+    background: #f2f4f7;
+    font-weight: 600;
+}
+
+.efficiency-memory-stats {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+    color: #444;
+}
+
+.efficiency-divider {
+    margin: 0 8px;
+    color: #999;
+}
+
+.efficiency-distributions h4 {
+    margin: 10px 0 8px 0;
+    font-size: 0.92rem;
+    color: #333;
+}
+
+.distribution-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 28px;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.distribution-label,
+.distribution-value {
+    font-size: 0.82rem;
+    color: #555;
+}
+
+.distribution-track {
+    height: 8px;
+    border-radius: 999px;
+    background: #e6ebf2;
+    overflow: hidden;
+}
+
+.distribution-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #5a67d8 100%);
+}
+
+.efficiency-guidance {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed #d7dde6;
+    color: #333;
+    font-size: 0.88rem;
+    display: grid;
+    gap: 4px;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .distribution-row {
+        grid-template-columns: 56px 1fr 24px;
+    }
+}
